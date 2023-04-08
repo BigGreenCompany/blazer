@@ -14,6 +14,7 @@ module Blazer::MessagesHelper
       :footnotes => true,
       :strikethrough => true,
       :underline => false,
+      :italic => false,
       :highlight => true,
       :tables => true,
       :space_after_headers => true,
