@@ -11,6 +11,12 @@
                 <div class="chat-message-content"><%= markdown.render(@query).html_safe %></div>
             </div>
         <% end %>
+        <% if @error.present? %>
+            <div class="chat-message">
+                <div class="chat-message-sender">System</div>
+                <div class="chat-message-content"><%= @error %></div>
+            </div>
+        <% end %>
         <% if @choices.present? %>
             <% @choices.each do |choice| %>
                 <div class="chat-message">
