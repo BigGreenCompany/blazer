@@ -368,6 +368,10 @@ SELECT name, geojson FROM counties
 
 To enable, get an access token from [Mapbox](https://www.mapbox.com/) and set `ENV["MAPBOX_ACCESS_TOKEN"]`.
 
+### OpenAI Chat
+
+To enable, get an access token from [OpenAI](https://www.openai.com/) and set `ENV["OPENAI_ACCESS_TOKEN"]`.
+
 ### Targets
 
 Use the column name `target` to draw a line for goals. [Example](https://blazer.dokkuapp.com/queries/8-target-line)

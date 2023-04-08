@@ -4,11 +4,33 @@
             <div class="chat-message-sender">System</div>
             <div class="chat-message-content">Hello! Please ask a question about your application data and I will respond with a raw sql query.</div>
         </div>
+        <% if @query.present? %>
+            <div class="chat-message">
+                <%# TODO: get current user %>
+                <div class="chat-message-sender">User</div>
+                <div class="chat-message-content"><%= @query %></div>
+            </div>
+        <% end %>
+        <% if @message.present? %>
+            <div class="chat-message">
+                <div class="chat-message-sender">System</div>
+                <div class="chat-message-content"><%= @message %></div>
+            </div>
+        <% end %>
+        <% if @choices.present? %>
+            <% @choices.each do |choice| %>
+                <div class="chat-message">
+                    <div class="chat-message-sender">System</div>
+                    <div class="chat-message-content"><%= choice.dig("message", "content") %></div>
+                </div>
+            <% end %>
+        <% end %>
     </div>
 </div>
 
-<form class="chat-input" action="/blazer/chat" method="POST">
-    <textarea rows="1" type="text" id="chat-input" placeholder="Type your message..."></textarea>
+<form class="chat-input" action="/blazer/messages" method="GET">
+    <input type="hidden" name="data_source" value="main">
+    <textarea rows="1" type="text" id="chat-input" name="query" placeholder="Type your message..."></textarea>
     <button id="send-button">Send</button>
 </form>
 
