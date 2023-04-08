@@ -1,35 +1,18 @@
 <div class="chat-container">
-    <div class="chat-box" id="chat-box">
-        <div class="chat-message">
-            <div class="chat-message-sender">System</div>
-            <div class="chat-message-content">Hello! Please ask a question about your application data and I will respond with a raw sql query.</div>
-        </div>
-        <% if @query.present? %>
-            <div class="chat-message">
-                <%# TODO: get current user %>
-                <div class="chat-message-sender">User</div>
-                <div class="chat-message-content"><%= markdown.render(@query).html_safe %></div>
-            </div>
+  <div class="chat-box" id="chat-box">
+      <%= render "message", sender: "System", content: "Hello! Please ask a question about your application data and I will respond with a raw sql query." %>
+      <% if @query.present? %>
+        <%= render "message", sender: "User", content: markdown.render(@query).html_safe %>
+      <% end %>
+      <% if @error.present? %>
+        <%= render "message", sender: "System", content: @error %>
+      <% end %>
+      <% if @choices.present? %>
+        <% @choices.each do |choice| %>
+          <%= render "message", sender: "System", content: markdown.render(choice.dig("message", "content")).html_safe %>
         <% end %>
-        <% if @error.present? %>
-            <div class="chat-message">
-                <div class="chat-message-sender">System</div>
-                <div class="chat-message-content"><%= @error %></div>
-            </div>
-        <% end %>
-        <% if @choices.present? %>
-            <% @choices.each do |choice| %>
-                <div class="chat-message">
-                    <div class="chat-message-sender">System</div>
-                    <div class="chat-message-content"><%= markdown.render(choice.dig("message", "content")).html_safe %></div>
-                </div>
-            <% end %>
-        <% end %>
-    </div>
+      <% end %>
+  </div>
 </div>
 
-<form class="chat-input" action="/blazer/messages" method="GET">
-    <input type="text" id="chat-input" name="query" placeholder="Type your message..." />
-    <button id="send-button" type="submit">Send</button>
-</form>
-
+<%= render "form" %>
