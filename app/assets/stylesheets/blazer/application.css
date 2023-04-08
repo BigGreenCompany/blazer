@@ -4,6 +4,7 @@
  *= require ./selectize
  *= require ./github
  *= require ./daterangepicker
+ *= require ./chat
  *= require_self
  */
 
