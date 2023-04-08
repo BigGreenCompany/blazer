@@ -34,24 +34,27 @@ body, input, button {
 
 .chat-input {
     display: flex;
-    justify-content: center; /* center chat input horizontally */
-    align-items: center; /* center chat input vertically */
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     background-color: #f5f5f5;
-    position: fixed; /* change to fixed for bottom-fixed position */
+    position: fixed;
     bottom: 0;
-    left: 0;
+    left: 50%; /* Updated: Set left to 50% */
+    transform: translateX(-50%); /* Updated: Add transform to center horizontally */
     width: 100%;
-}
+    /* max-width: 1140px; */
+    max-width: 600px;
+  }
 
-#chat-input {
+  #chat-input {
     flex: 1;
     padding: 8px;
     border: none;
     border-radius: 4px;
-}
+  }
 
-#send-button {
+  #send-button {
     padding: 8px;
     background-color: #007bff;
     color: #fff;
@@ -59,4 +62,4 @@ body, input, button {
     border-radius: 4px;
     margin-left: 10px;
     cursor: pointer;
-}
+  }
