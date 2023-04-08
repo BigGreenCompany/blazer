@@ -19,7 +19,7 @@ module Blazer
     private
 
     def set_schema
-      @schema = Blazer.data_sources[params[:data_source]].schema
+      @schema = Blazer.data_sources[params.fetch(:data_source, 'main')]].schema
     end
   end
 end

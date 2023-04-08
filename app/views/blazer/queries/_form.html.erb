@@ -20,7 +20,7 @@
             <a :href="docsPath" target="_blank" style="margin-left: 40px;">Docs</a>
             <a :href="schemaPath" target="_blank" style="margin-left: 40px;">Schema</a>
             <%# TODO: make this dynamic %>
-            <a href="/blazer/messages?data_source=main" target="_blank" style="margin-left: 40px;">Ask GPT</a>
+            <a href="/blazer/messages" target="_blank" style="margin-left: 40px;">Ask GPT</a>
           </div>
 
           <%= f.select :data_source, Blazer.data_sources.map { |_, ds| [ds.name, ds.id] }, {}, class: ("hide" if Blazer.data_sources.size <= 1), style: "width: 140px;" %>
