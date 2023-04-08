@@ -19,7 +19,13 @@ module Blazer
     private
 
     def set_schema
-      @schema = Blazer.data_sources[params.fetch(:data_source, 'main')].schema
+      # TODO: refactor
+      # some models limit the number of tokens
+      # rejecting blazer tables saves some space
+      # not likely to want to create a query about queries
+      @schema = Blazer.data_sources[params.fetch(:data_source, 'main')]
+                      .schema
+                      .reject { |table| table[:table].starts_with? 'blazer_' }
     end
   end
 end
