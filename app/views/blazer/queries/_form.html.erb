@@ -19,6 +19,7 @@
             <%= link_to "Back", :back %>
             <a :href="docsPath" target="_blank" style="margin-left: 40px;">Docs</a>
             <a :href="schemaPath" target="_blank" style="margin-left: 40px;">Schema</a>
+            <a href="/blazer/messages" target="_blank" style="margin-left: 40px;">Chat</a>
           </div>
 
           <%= f.select :data_source, Blazer.data_sources.map { |_, ds| [ds.name, ds.id] }, {}, class: ("hide" if Blazer.data_sources.size <= 1), style: "width: 140px;" %>

@@ -1,0 +1,14 @@
+<div class="chat-container">
+    <div class="chat-box" id="chat-box">
+        <div class="chat-message">
+            <div class="chat-message-sender">System</div>
+            <div class="chat-message-content">Hello! Please ask a question about your application data and I will respond with a raw sql query.</div>
+        </div>
+    </div>
+</div>
+
+<form class="chat-input" action="/blazer/chat" method="POST">
+    <textarea rows="1" type="text" id="chat-input" placeholder="Type your message..."></textarea>
+    <button id="send-button">Send</button>
+</form>
+
