@@ -72,6 +72,7 @@ module Blazer
     attr_accessor :slack_oauth_token
     attr_accessor :slack_webhook_url
     attr_accessor :mapbox_access_token
+    attr_accessor :openai_access_token
   end
   self.audit = true
   self.user_name = :name
@@ -221,6 +222,10 @@ module Blazer
   # TODO show warning on invalid access token
   def self.maps?
     mapbox_access_token.present? && mapbox_access_token.start_with?("pk.")
+  end
+
+  def self.openai?
+    openai_access_token.present? && openai_access_token.start_with?("sk-")
   end
 
   def self.uploads?

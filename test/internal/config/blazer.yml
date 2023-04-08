@@ -83,4 +83,4 @@ uploads:
   data_source: main
 
 # enable openai
-# open_ai: ENV["OPENAI_ACCESS_TOKEN"]
+open_ai: sk-token
