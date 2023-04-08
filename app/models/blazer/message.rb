@@ -6,7 +6,7 @@ module Blazer
     def initialize(schema)
       @schema = schema
       @client = OpenAI::Client.new(
-        access_token: ENV["OPENAI_ACCESS_TOKEN"]
+        access_token: Blazer.openai_access_token
       )
     end
 
