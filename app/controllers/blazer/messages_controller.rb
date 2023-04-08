@@ -3,7 +3,7 @@ module Blazer
     before_action :set_schema
 
     def index
-      @query = params.fetch("query")
+      @query = params.dig("query")
 
       if @query.present?
         response = Message.new(@schema).chat(@query)
