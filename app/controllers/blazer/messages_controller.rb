@@ -7,7 +7,6 @@ module Blazer
 
       if @query.present?
         response = Message.new(@schema).chat(@query)
-        @message = response.dig("choices", 0, "message", "content")
         @choices = response.fetch("choices")
       end
 
