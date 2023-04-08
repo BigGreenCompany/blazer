@@ -79,4 +79,5 @@ check_schedules:
 #   data_source: main
 
 # enable openai
-# open_ai: <%%= ENV["OPENAI_ACCESS_TOKEN"] %>
+# openai_access_token: <%%= ENV["OPENAI_ACCESS_TOKEN"] %>
+# openai_model: <%%= ENV["OPENAI_MODEL"] %>

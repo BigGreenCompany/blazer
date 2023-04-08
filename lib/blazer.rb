@@ -73,6 +73,7 @@ module Blazer
     attr_accessor :slack_webhook_url
     attr_accessor :mapbox_access_token
     attr_accessor :openai_access_token
+    attr_accessor :openai_model
   end
   self.audit = true
   self.user_name = :name
@@ -225,7 +226,7 @@ module Blazer
   end
 
   def self.openai?
-    openai_access_token.present? && openai_access_token.start_with?("sk-")
+    openai_access_token.present? && openai_access_token.start_with?("sk-") && openai_model.present?
   end
 
   def self.uploads?

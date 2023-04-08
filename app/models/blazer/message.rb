@@ -13,7 +13,7 @@ module Blazer
     def chat(query)
       @client.chat(
         parameters: {
-            model: "gpt-3.5-turbo",
+            model: Blazer.openai_model,
             messages: [
               {role: "system", content: "You are a postgresql expert. I am going to ask you a question and you will translate it into a raw sql query using this schema: #{@schema}"},
               {role: "user", content: query}

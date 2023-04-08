@@ -38,6 +38,7 @@ module Blazer
       Blazer.slack_webhook_url = Blazer.settings["slack_webhook_url"] || ENV["BLAZER_SLACK_WEBHOOK_URL"]
       Blazer.mapbox_access_token = Blazer.settings["mapbox_access_token"] || ENV["MAPBOX_ACCESS_TOKEN"]
       Blazer.openai_access_token = Blazer.settings["openai_access_token"] || ENV["openai_access_token"]
+      Blazer.openai_model = Blazer.settings["openai_model"] || ENV["openai_model"]
     end
   end
 end

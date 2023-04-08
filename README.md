@@ -370,7 +370,7 @@ To enable, get an access token from [Mapbox](https://www.mapbox.com/) and set `E
 
 ### OpenAI Chat
 
-To enable, get an access token from [OpenAI](https://www.openai.com/) and set `ENV["OPENAI_ACCESS_TOKEN"]`.
+To enable, get an access token from [OpenAI](https://www.openai.com/) and set `ENV["OPENAI_ACCESS_TOKEN"]` and `ENV["OPENAI_MODEL"]`.
 
 ### Targets
 
