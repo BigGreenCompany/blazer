@@ -13,7 +13,7 @@ module Blazer::MessagesHelper
       :quote => true,
       :footnotes => true,
       :strikethrough => true,
-      :underline => true,
+      :underline => false,
       :highlight => true,
       :tables => true,
       :space_after_headers => true,
