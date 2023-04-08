@@ -14,8 +14,5 @@
     <li><%= link_to "New Dashboard", new_dashboard_path %></li>
     <% check_params = @query ? {query_id: @query.id} : {} %>
     <li><%= link_to "New Check", new_check_path(check_params) %></li>
-    <li role="separator" class="divider"></li>
-    <%# TODO: make this dynamic %>
-    <li><%= link_to "Ask GPT", "/blazer/messages?data_source=main" %></li>
   </ul>
 </div>
