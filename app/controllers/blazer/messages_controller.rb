@@ -12,7 +12,7 @@ module Blazer
       end
 
       respond_to do |format|
-        format.html { render("messages/index") }
+        format.html { render("index") }
       end
     end
 
