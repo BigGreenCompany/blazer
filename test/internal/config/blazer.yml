@@ -81,3 +81,6 @@ uploads:
   url: postgres://localhost/blazer_test
   schema: uploads
   data_source: main
+
+# enable openai
+# open_ai: ENV["OPENAI_ACCESS_TOKEN"]
