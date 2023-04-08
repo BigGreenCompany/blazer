@@ -1,6 +1,7 @@
 # dependencies
 require "chartkick"
 require "safely/core"
+require "openai"
 
 # stdlib
 require "csv"

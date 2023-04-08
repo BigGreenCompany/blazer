@@ -1,5 +1,3 @@
-require "openai"
-
 module Blazer
   class Message
 
