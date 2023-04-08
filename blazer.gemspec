@@ -19,5 +19,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "activerecord", ">= 6"
   spec.add_dependency "chartkick", ">= 3.2"
   spec.add_dependency "safely_block", ">= 0.1.1"
-  spec.add_dependency "openai", ">= 3.7"
+  spec.add_dependency "ruby-openai", ">= 3.7"
 end
