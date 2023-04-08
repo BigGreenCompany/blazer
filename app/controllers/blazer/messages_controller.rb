@@ -7,7 +7,8 @@ module Blazer
 
       if @query.present?
         response = Message.new(@schema).chat(@query)
-        @choices = response.fetch("choices")
+        @choices = response.dig("choices")
+        puts response if @choices.blank?
       end
 
       respond_to do |format|
