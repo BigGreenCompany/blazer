@@ -1,5 +1,5 @@
 module Blazer
-  class ChatController < BaseController
+  class MessagesController < BaseController
     before_action :set_schema
 
     def index; end
