@@ -1,6 +1,6 @@
 require "redcarpet"
 
-module MessagesHelper
+module Blazer::MessagesHelper
 
   def markdown
     Redcarpet::Markdown.new(Redcarpet::Render::HTML)
