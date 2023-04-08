@@ -8,20 +8,20 @@
             <div class="chat-message">
                 <%# TODO: get current user %>
                 <div class="chat-message-sender">User</div>
-                <div class="chat-message-content"><%= @query %></div>
+                <div class="chat-message-content"><%= markdown.render(@query) %></div>
             </div>
         <% end %>
         <% if @message.present? %>
             <div class="chat-message">
                 <div class="chat-message-sender">System</div>
-                <div class="chat-message-content"><%= @message %></div>
+                <div class="chat-message-content"><%= markdown.render(@message) %></div>
             </div>
         <% end %>
         <% if @choices.present? %>
             <% @choices.each do |choice| %>
                 <div class="chat-message">
                     <div class="chat-message-sender">System</div>
-                    <div class="chat-message-content"><%= choice.dig("message", "content") %></div>
+                    <div class="chat-message-content"><%= markdown.render(choice.dig("message", "content")) %></div>
                 </div>
             <% end %>
         <% end %>

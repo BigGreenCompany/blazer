@@ -9,6 +9,7 @@ gem "rails"
 gem "pg"
 gem "sprockets-rails"
 gem "ruby-openai"
+gem "redcarpet"
 
 # data sources
 # gem "activerecord6-redshift-adapter"
