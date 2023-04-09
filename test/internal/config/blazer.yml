@@ -83,4 +83,5 @@ uploads:
   data_source: main
 
 # enable openai
-open_ai: sk-token
+openai_access_token: sk-token
+openai_model: gpt-3.5-turbo
