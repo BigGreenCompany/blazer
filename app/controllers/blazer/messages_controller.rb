@@ -26,6 +26,7 @@ module Blazer
       @schema = Blazer.data_sources[params.fetch(:data_source, 'main')]
                       .schema
                       .reject { |table| table[:table].starts_with? 'blazer_' }
+                      .map { |hash| hash.except(:schema) }
     end
   end
 end
